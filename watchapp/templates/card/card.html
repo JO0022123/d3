@@ -1,0 +1,28 @@
+{%extends "common/layout.html"%}
+{%load static%}
+
+{% block content %}
+
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+            <h3>cards</h3>
+            <hr>
+        </div>
+        {%for x in cat%}
+        <div class="col-md-4 col-lg-4">
+            <div class="card mb-5">
+                <a href="{% url 'product_details' x.name %}">
+                <img class="card-img-top" src="{{x.product_image.url}}" alt="Title" style="height: 200px;">
+                <div class="card-body">
+                    <h4 class="card-title">{{x.name}}</h4>
+                    <p class="card-text">{{x.description}}</p>
+                </div>
+                </a>
+            </div>
+        </div>
+        {%endfor%}
+    </div>
+</div>
+
+{% endblock content %}

@@ -1,0 +1,40 @@
+{%extends "common/layout.html"%}
+{%load static%}
+
+{% block content %}
+
+<h1 class="h2">about</h1>
+{%for x in stu%}
+<li>{{x.name}}</li>
+
+{%endfor%}
+<a href="{%url 'create'%}" class="btn btn-primary ms-5">add</a>
+        <div class="table-responsive">
+            <table class="table table-primary">
+                <thead>
+                    <tr>
+                        <th>email</th>
+                        <th>name</th>
+                        <th>ph</th>
+                        <th>action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {%for x in stu%}
+                    <tr class="">
+                       
+                        <td>{{x.email}}</td>
+                        <td>{{x.name}}</td>
+                        <td>{{x.ph}}</td>
+                        <td><button class="btn btn-danger"><a href="{% url 'delete' x.pk %}">delete</a></button>   <button class="btn btn-success"><a href="{%url 'edit' x.id%}">Edit</a></button></td>
+                    </tr>
+                    {%endfor%}
+                </tbody>
+            </table>
+        </div>
+        
+    </tr>
+</table>
+
+
+{% endblock content %}

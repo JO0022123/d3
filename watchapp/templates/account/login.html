@@ -1,0 +1,20 @@
+{%extends "common/layout.html"%}
+{% block content %}
+<h1>login form</h1>
+
+<div class="container">
+    <form method="POST" action="">
+        {% csrf_token%}
+        <div class="mb-4">
+            <label for="" class="d-block">username</label>
+           <input type="text" name="username" id="username" class="form-control">
+        </div>
+        <div class="mb-4">
+            <label for="" class="d-block">Password</label>
+            <input type="password" name="password" id="password" class="form-control">
+        </div>
+       <button class="btn btn-primary">login</button>
+    </form>
+</div>
+{% include 'common/message.html' %}
+{% endblock content %}

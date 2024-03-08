@@ -1,0 +1,13 @@
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/style.css'%}">
+{% block content %}
+
+<form action="" method="POST">
+    {% csrf_token %}
+    email: <input type="email" name="email">
+    name: <input type="text" name="name">
+    ph: <input type="number" name="ph">
+    <input type="submit" name="" id="">
+</form>
+
+{% endblock content %}

@@ -1,0 +1,11 @@
+{% block content %}
+
+<form action="/update/{{obj.id}}" method="POST">
+    {% csrf_token %}
+    email: <input type="email" name="email" value="{{obj.email}}">
+    name: <input type="text" name="name" value="{{obj.name}}">
+    ph: <input type="number" name="ph" value="{{obj.ph}}">
+    <input type="submit" name="" id="">
+</form>
+
+{% endblock content %}
